@@ -7,6 +7,8 @@ open, it should look like this:
 # Remotely Connecting
 These steps are about how to connect to a remote computer using VS Code or a terminal.
 1. Install git for Windows. The link is [https://gitforwindows.org/](https://gitforwindows.org/).
-2. 
+2. To have the default terminal use git bash, first open the terminal by pressing Ctrl + `. Press
+Ctrl + Shift + P to open the command palette. Search "Select Default Profile", and select Git Bash. 
+Then click "+" in the terminal window, the terminal will now be Git Bash.
 
 # Trying Some Commands
