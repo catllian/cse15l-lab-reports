@@ -2,7 +2,7 @@
 First, download Visual Studio Code for your operating system. The link to download it 
 is [https://code.visualstudio.com/](https://code.visualstudio.com/). When VSCode is
 open, it should look like this:
-![Image](vscodewindow.png)
+![Image](wk1lrvscodewindow.png)
 
 # Remotely Connecting
 These steps are about how to connect to a remote computer using VS Code or a terminal.
@@ -25,6 +25,10 @@ and enter, even though it does not show up when it is being typed, it is still b
 (cs15lwi23zzz@ieng6.ucsd.edu) Password:
 ```
 6. After successfully connecting to the remote server, your terminal should look like this.
-![Image](remoteserver.png)
+![Image](wk1lrremoteserver.png)
 
 # Trying Some Commands
+After connecting, try some commands, both on your computer and on the remote server. Example commands
+would be `cd`, `ls`, `pwd`, `mkdir`, and `cp`. The following screenshot is an example where I tried
+the command `ls -lat` on my computer and the remote server.
+![Image](wk1lrremoteservertestcommand.png)
