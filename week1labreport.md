@@ -23,7 +23,7 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
 ```
 (cs15lwi23zzz@ieng6.ucsd.edu) Password:
 ```
-Type in the password and enter, even though it does not show up when it is being typed, it is still
+   Type in the password and enter, even though it does not show up when it is being typed, it is still
 being typed.
 
 # Trying Some Commands
