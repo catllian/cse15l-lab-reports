@@ -1,3 +1,7 @@
+# Week 1 Lab Report
+---
+by Catherine Lian
+
 # Installing Visual Studio Code
 First, download Visual Studio Code for your operating system. The link to download it 
 is [https://code.visualstudio.com/](https://code.visualstudio.com/). When VSCode is
