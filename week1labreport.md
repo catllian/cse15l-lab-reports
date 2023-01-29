@@ -35,12 +35,15 @@ and enter (even though it does not show up when it is being typed, it is still b
 
 # Trying Some Commands
 After connecting, try some commands, both on your computer and on the remote server. Example commands:
-* `cd` - changes the working directory, variation `cd ~`
-* `ls` - lists files and folders for the path, variations `ls -lat`, `ls -a`, `ls <directory>`
+* `cd` or `cd ~` - changes the working directory to the home directory 
+* `ls` - lists files and folders for the working directory
+* `ls -lat` - list files and folders with additional details for the working directory
+* `ls -a` - lists files and folders (including hidden ones) for the working directory
+* `ls <directory>` - lists files and folders for the given directory
 * `pwd` - prints the working directory
 * `mkdir` - creates a new directory with the pathname
-* `cp` - specifies classpath to search for classfiles in
-* `cat` - prints the contents of the files at the given paths
+* `cp <path>` - specifies classpath to search for classfiles in
+* `cat <path>` - prints the contents of the files at the given paths
 
 The following are examples where I tried the command `ls -lat`, the first screenshot is for the command 
 done on my computer and the second is for the one done on the remote server.
