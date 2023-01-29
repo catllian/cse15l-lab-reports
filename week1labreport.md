@@ -41,6 +41,7 @@ After connecting, try some commands, both on your computer and on the remote ser
 * `mkdir` - creates a new directory with the pathname
 * `cp` - specifies classpath to search for classfiles in
 * `cat` - prints the contents of the files at the given paths
+
 The following are examples where I tried the command `ls -lat`, the first screenshot is for the command 
 done on my computer and the second is for the one done on the remote server.
 ![Image](wk1lrpctestcommand.png)
