@@ -1,9 +1,13 @@
 # Week 1 Lab Report
 
 # Installing VSCode
-First, download Visual Studio Code for your operating system. The link to download it 
-is [https://code.visualstudio.com/](https://code.visualstudio.com/). When VSCode is
-open, it should look like this:
+If you choose not to download Visual Studio Code for your personal computer, you can choose to use 
+the program on the lab computers, and can skip this section.
+
+If you are going to download VS Code for your personal computer, then you will go to this link 
+[https://code.visualstudio.com/](https://code.visualstudio.com/). You will download the setup for 
+your specific operating system. You can keep the default choices for the setup when installing. When 
+VSCode is open, it should look like this:
 ![Image](wk1lrvscodewindow.png)
 
 # Remotely Connecting
@@ -30,9 +34,14 @@ and enter (even though it does not show up when it is being typed, it is still b
 ![Image](wk1lrremoteserver.png)
 
 # Trying Some Commands
-After connecting, try some commands, both on your computer and on the remote server. Example commands
-would be `cd`, `ls`, `pwd`, `mkdir`, and `cp`. The following are examples where I tried the command
-`ls -lat`, the first screenshot is for the command done on my computer and the second is for the one
-done on the remote server.
+After connecting, try some commands, both on your computer and on the remote server. Example commands:
+* `cd` - changes the working directory, variation `cd ~`
+* `ls` - lists files and folders for the path, variations `ls -lat`, `ls -a`, `ls <directory>`
+* `pwd` - prints the working directory
+* `mkdir` - creates a new directory with the pathname
+* `cp` - specifies classpath to search for classfiles in
+* `cat` - prints the contents of the files at the given paths
+The following are examples where I tried the command `ls -lat`, the first screenshot is for the command 
+done on my computer and the second is for the one done on the remote server.
 ![Image](wk1lrpctestcommand.png)
 ![Image](wk1lrremoteservertestcommand.png)
