@@ -1,10 +1,10 @@
 # Week 1 Lab Report
 
 # Installing VSCode
-If you choose not to download Visual Studio Code for your personal computer, you can choose to use 
-the program on the lab computers, and can skip this section.
+If you choose not to download Visual Studio Code for your personal computer, you can use the program 
+on the lab computers, and skip this section.
 
-If you are going to download VS Code for your personal computer, then you will go to this link 
+If you are going to download VS Code for your personal computer, go to this link 
 [https://code.visualstudio.com/](https://code.visualstudio.com/). You will download the setup for 
 your specific operating system. You can keep the default choices for the setup when installing. When 
 VSCode is open, it should look like this:
