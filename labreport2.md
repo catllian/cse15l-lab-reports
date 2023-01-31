@@ -75,5 +75,13 @@ public String handleRequest(URI url) {
         return String.format(strTotal);
     }
 ```
+The main change I made was creating a new String variable called `strTotal` that additional query strings could be concatenated 
+to. Due to me making this change, I also had to change the body of the else-if statement. I added a line to modify `strTotal` and 
+edited the line to return it.
+
+# Part 3
+One thing I learned from the past few weeks is how the student’s definition of a working program differs from the professional definition. 
+The student definition only requires that the program exhibits correct I/O most of the time. Technically, this can be sufficient enough to 
+accomplish the assigned task.
 
 
