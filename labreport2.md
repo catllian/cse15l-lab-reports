@@ -20,13 +20,60 @@ instance. Then, `String.format(parameters[1] + “\n”)` is returned, which pri
 on the webpage.
 ![Image](wk4lrpt11.png)
 The following screenshot shows the website with the given query string in the URL being “SecondLine” (I am aware this 
-output is incorrect, a test case and correction is made in Part 2). Most of the code execution is the same except for 
-the last few lines. When I went to the website (entered the URL), the main method of StringServer was called, and the 
-same lines executed. Then handleRequest is called, with most of the lines executing with the same results. Then 
-url.getQuery().split(“=”) is used to assign the URL, split on the “=” character, to a String array called parameters. In 
-the parameters array, the first element is the “s” from the URL, and the second element is the given query string, “SecondLine” 
-in this instance. Then, String.format(parameters[1] + “\n”) is returned, which prints the given query string (“SecondLine”) 
-and a new line on the webpage. The output is incorrect because the second input for the given query string is not concatenated 
-to the first one. It is supposed to be “FirstLine” + “\n” + “SecondLine”, but instead, only “SecondLine” is printed when the 
-second URL is entered.
+output is incorrect, corrections to the code are made in Part 2). Most of the code execution is the same as the first input except 
+for the last few lines. When I went to the website (entered the URL), the main method of StringServer was called, and the same lines 
+executed. Then `handleRequest()` is called, with most of the lines executing with the same results. Then `url.getQuery().split(“=”)` 
+is used to assign the URL (split on the “=” character) to a String array called `parameters`. In the `parameters` array, the first 
+element is the “s” from the URL, and the second element is the given query string, “SecondLine” in this instance. Then, 
+`String.format(parameters[1] + “\n”)` is returned, which prints the given query string (“SecondLine”) and a new line on the webpage. 
+The output is incorrect. The expected output is “FirstLine” + “\n” + “SecondLine”, but instead, only “SecondLine” is printed when the 
+second input is given.
 ![Image](wk4lrpt12.png)
+
+# Part 2
+For this part, unfortunately, I was having trouble with using the assertEquals() method on for the JUnit tests. When I was using the 
+`handleRequest()` method for the actual value in the `assertEquals()` method, I kept getting an error saying I couldn’t “make a static 
+reference to the non-static method handleRequest(URI url)”. I will try to figure it out by asking the professor or TA’s, and resubmitting 
+the lab report. However, for now, I’ll just be entering the URL (the input) to the server, and taking screenshots of the printed statements 
+(the output) to check for bug symptoms and fixes.
+
+* Failure-inducing test 1: The screenshots I showed in Part 1 are already a case of a bug. Two URI inputs with two valid query strings were 
+given. The expected output (after the two inputs are given) is that the first input string followed by the second input string on the next line 
+should be printed. The first output was correct, as it printed the first given query string. The bug symptom was that only the second string 
+was printed after the second URI input was given.
+* Failure-inducing test 2: For this test, I used two URI inputs, one with a valid query string, and a second without one 
+(meaning `getPath() = “/”`). The expected output (after the two inputs were given) was that the first input string should be printed. The first 
+output was correct, as it printed the first given query string. The symptom was that nothing was printed after the second URI input was given.
+![Image](wk4lrpt21.png)
+![Image](wk4lrpt22.png)
+* No-failure test: For this test, I used one URI input, one with a valid query string. The expected output was that the input string should be 
+printed. The actual output was the same as the expected.
+![Image](wk4lrpt23.png)
+
+* Code before fixes:
+```
+public String handleRequest(URI url) {
+    if (url.getPath().equals("/")) {
+        return "";
+    }
+    else if (url.getPath().contains("/add-message")) {
+        String[] parameters = url.getQuery().split("=");
+        return String.format(parameters[1] + "\n");
+    }
+```
+* Code after fixes:
+```
+String strTotal = "";
+
+public String handleRequest(URI url) {
+    if (url.getPath().equals("/")) {
+        return "";
+    }
+    else if (url.getPath().contains("/add-message")) {
+        String[] parameters = url.getQuery().split("=");
+        strTotal = strTotal + parameters[1] + "\n";
+        return String.format(strTotal);
+    }
+```
+
+
