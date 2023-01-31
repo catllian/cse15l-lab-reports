@@ -76,7 +76,7 @@ public String handleRequest(URI url) {
     }
 ```
 The main change I made was creating a new String variable called `strTotal` that additional query strings could be concatenated 
-to. Due to me making this change, I also had to change the body of the else-if statement. I added a line to modify `strTotal` and 
+to. Due to making this change, I also had to change the body of the else-if statement. I added a line to modify `strTotal` and 
 edited the line to return it.
 
 # Part 3
