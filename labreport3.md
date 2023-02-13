@@ -7,11 +7,11 @@ The option -c is meant to only display the number of matching lines for each fil
 
 For the first example, I searched the .txt files within the directory `non-fiction/OUP/Abernathy/` for a file that had the matching string "1940s". 
 "1940s" is only present in one file, ch1.txt.
-The command:
+Command:
 ```
 $ grep -c "1940s" non-fiction/OUP/Abernathy/*.txt
 ```
-The output:
+Output:
 ```
 non-fiction/OUP/Abernathy/ch1.txt:1
 non-fiction/OUP/Abernathy/ch14.txt:0
@@ -28,11 +28,11 @@ and that the rest have 0 lines that match. This option would be useful if the us
 used to make succinct comparisons between multiple files.
 
 For the second example, I searched one .txt file with the path `travel_guides/berlitz1/HandRHawaii.txt` for lines that matched "the".
-The command:
+Command:
 ```
 $ grep -c "the" travel_guides/berlitz1/HandRHawaii.txt
 ```
-The output:
+Output:
 ```
 64
 ```
@@ -44,11 +44,11 @@ The option -l is meant to only display the files that have matching lines.
 
 For the first example, I searched the .txt files within the relative directory `non-fiction/OUP/Abernathy/` for a file that had the matching string "1940s". 
 "1940s" is only present in one file, ch1.txt.
-The command:
+Command:
 ```
 $ grep -l "1940s" non-fiction/OUP/Abernathy/*.txt
 ```
-The output:
+Output:
 ```
 non-fiction/OUP/Abernathy/ch1.txt
 ```
@@ -57,11 +57,11 @@ know whether there are any matching strings in any files.
 
 For the second example, I searched the .txt files within the directory `travel_guides/berlitz1/*.txt` for the string "❁". The string is present in 
 multiple .txt files in this directory.
-The command:
+Command:
 ```
 $ grep -l "❁" travel_guides/berlitz1/*.txt
 ```
-The output:
+Output:
 ```
 travel_guides/berlitz1/HandRIsrael.txt
 travel_guides/berlitz1/HandRIstanbul.txt
@@ -76,14 +76,27 @@ The output displays the paths to the .txt files with the matching lines.
 The option -n displays the line number with the matching lines.
 
 For the first example, I searched one .txt file with the path `non-fiction/OUP/Abernathy/ch1.txt` for the line with the string "1940s". 
-The command:
+Command:
 ```
 $ grep -n "1940s" non-fiction/OUP/Abernathy/ch1.txt
 ```
-The output:
+Output:
 ```
 5:In the late 1940s, Bond Stores, the largest men’s clothing chain at the time, created a sensation in New York City by offering a wide selection of suits with two pairs of pants instead of one, reintroducing a level of product choice not seen since before the war.1 When the line of hopeful buyers at its Times Square store stretched around the block, Bond had to impose a limit of two suits per customer. During World War II, the apparel and textile industries had been converted to supply field jackets, overcoats, and uniforms to the U.S. and Allied Forces. But in the years immediately following the war, returning soldiers, the end of rationing, and pent-up customer demand meant apparel was in short supply.
 ```
-The output displays number of the matching line followed by the line itself. This would be useful if the user wanted to find where in the file the matching string was.
+The output displays the number of the matching line followed by the line itself. This would be useful if the user wanted to find where in the file the matching string was.
 
-For the second example, I searched 
+For the second example, I searched the .txt files within the directory `travel_guides/berlitz2/` for files with lines that matched "Where To Go". There are multiple 
+files in this directory with matching lines.
+Command:
+```
+$ grep -n "Where To Go" travel_guides/berlitz2/*.txt
+```
+Output:
+```
+travel_guides/berlitz2/Beijing-WhereToGo.txt:5:Where To Go
+travel_guides/berlitz2/CanaryIslands-WhatToDo.txt:48:Watch the birdie (and the dolphins). There are several animal/bird parks in the islands, Tenerife’s Loro Park, Gran Canaria’s Palmitos Park, or Lanzarote’s Guinate Tropical Park are all described in the Where To Go section of this guide. Others include the Parque Las Aguilas, Los Cristianos, Arona (Tenerife), which as the name implies, has an eagle show, all kinds of other birds and animals, and the new JungleRaid where kids of all ages can work their way through all kinds of obstacles.
+travel_guides/berlitz2/CanaryIslands-WhatToDo.txt:50:Submarine Trips: see Where To Go for info on these excursions. Puerto Colón, Playa de Américas (Tenerife); Peurto de Mogán (Gran Canaria); and Puerto Calero (Lanzarote).
+travel_guides/berlitz2/Paris-WhereToGo.txt:5:Where To Go
+```
+The output displays the paths to the files with the matching lines, the numbers of the matching lines, and the lines themselves.
