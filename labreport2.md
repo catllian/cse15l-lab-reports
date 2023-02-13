@@ -2,7 +2,7 @@
 
 # Part 1
 The following is my code for StringServer.java:
-![Image](wk4lrstrsvrorig.png)
+![Image](wk4lrpt1(1).png)
 I used the Server.java file from the Week 2 Lab as part of setting up the server. I also used the NumberServer.java 
 file from the Week 2 Lab for examples for URI methods and writing the StringServer main method.
 
