@@ -54,24 +54,29 @@ local String variable `strTotal` is modified to a String that is a concatenation
 is returned, which prints the "FirstLine" on the first line and "SecondLine" on the second line.
 
 # Part 2
-For this part, unfortunately, I was having trouble with using the assertEquals() method on for the JUnit tests. When I was using the 
-`handleRequest()` method for the actual value in the `assertEquals()` method, I kept getting an error saying I couldn’t “make a static 
-reference to the non-static method handleRequest(URI url)”. I will try to figure it out by asking the professor or TA’s, and resubmitting 
-the lab report. However, for now, I’ll just be entering the URL (the input) to the server, and taking screenshots of the printed statements 
-(the output) to check for bug symptoms and fixes.
+For this part, I chose to investigate the bugs of the `averageWithoutLowest()` method in the ArrayExamples.java file.
 
-* Failure-inducing test 1: The screenshots I showed in Part 1 are already a case of a bug. Two URI inputs with two valid query strings were 
-given. The expected output (after the two inputs are given) is that the first input string followed by the second input string on the next line 
-should be printed. The first output was correct, as it printed the first given query string. The bug symptom was that only the second string 
-was printed after the second URI input was given.
-* Failure-inducing test 2: For this test, I used two URI inputs, one with a valid query string, and a second without one 
-(meaning `getPath() = “/”`). The expected output (after the two inputs were given) was that the first input string should be printed. The first 
-output was correct, as it printed the first given query string. The symptom was that nothing was printed after the second URI input was given.
-
-* No-failure test: For this test, I used one URI input, one with a valid query string. The expected output was that the input string should be 
-printed. The actual output was the same as the expected.
-
-
+* Failure-inducing test 1: This test uses an array with three values: 1.0, 1.0, and 2.0. It checks if the `averageWithoutLowest()` method can correctly 
+calculate the average of the double values in an array when there are duplicates of the lowest value. In this case, the average without lowest value should 
+be 2.0.
+```
+@Test
+  public void testAverageWithoutLowest1() {
+    double[] input4 = {1.0, 1.0, 2.0};
+    assertEquals(2.0 / 1, ArrayExamples.averageWithoutLowest(input4), 0.0);
+  }
+```
+* No-failure test: This test uses an array with two values: 1.0, 2.0. It checks if the `averageWithoutLowest()` method can correctly 
+calculate the average of unique double values of an array. In this case, the average without lowest value should be 2.0.
+```
+@Test
+  public void testAverageWithoutLowest2() {
+    double[] input5 = {1.0, 2.0};
+    assertEquals(2.0 / 1, ArrayExamples.averageWithoutLowest(input5), 0.0);
+  }
+```
+* Output of running JUnit tests:
+![Image](wk4lrpt2(1).png)
 * Code before fixes:
 ```
 public String handleRequest(URI url) {
