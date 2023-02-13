@@ -8,8 +8,15 @@ file from the Week 2 Lab for examples for URI methods and writing the StringServ
 
 The following screenshot shows the website with the given query string in the URL being “FirstLine”. When I went to 
 the website (entered the URL), the main method of StringServer was called. The field was String[] args, which had a 
-value which was the URL, which was [http://localhost:4000/add-message?s=FirstLine]http://localhost:4000/add-message?s=FirstLine. 
-Since `args.length == 0` is false, the body of the if statement is skipped. The field int port is found by using the `parseInt()` 
+value which was the URL, which was [http://localhost:4000/add-message?s=FirstLine]http://localhost:4000/add-message?s=FirstLine.
+```
+public static void main (String[] args) throws IOException {...}
+```
+Since `args.length == 0` is false, the body of the if statement is skipped. 
+```
+if(args.length == 0){...}
+```
+The field int port is found by using the `parseInt()` 
 method, and the value is 4000. A new instance of `Server` is instantiated and the `start()` method is called, with the value of 
 4000 for the `port` field, and a new `Handler()` instance being created for the `URLHandler` field. Then, the method `handleRequest()` 
 is called, with the URL being the value for the `url` field. Since `url.getPath().equals(“/”)` is not true, the body of the if 
