@@ -28,10 +28,19 @@ Then, the method `handleRequest()` is called, with the URL being the value for t
 public String handleRequest(URI url) {...}
 ```
 Since `url.getPath().equals(“/”)` is not true, the body of the if statement is skipped.
+```
+if (url.getPath().equals("/")) {...}
+```
 Since `url.getPath().contains(“/add-message”)` is true, the if statement body is executed. `url.getQuery().split(“=”)` is used to 
 assign the URL (split on the “=” character) to a String array called `parameters`. In the `parameters` array, the first element is the “s” 
 from the URL, and the second element is the given query string, “FirstLine” in this instance. Then, `String.format(parameters[1] + “\n”)` 
 is returned, which prints the given query string (“FirstLine”) and a new line on the webpage.
+```
+else if (url.getPath().contains("/add-message")) {
+    String[] parameters = url.getQuery().split("=");
+    strTotal = strTotal + parameters[1] + "\n";
+    return String.format(strTotal);
+}
 
 The following screenshot shows the website with the given query string in the URL being “SecondLine” (I am aware this 
 output is incorrect, corrections to the code are made in Part 2). Most of the code execution is the same as the first input except 
