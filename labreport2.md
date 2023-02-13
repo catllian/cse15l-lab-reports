@@ -6,8 +6,9 @@ The following is my code for StringServer.java:
 I used the Server.java file from the Week 2 Lab as part of setting up the server. I also used the NumberServer.java 
 file from the Week 2 Lab for examples for URI methods and writing the StringServer main method.
 
-The following screenshot shows the website with the given query string in the URL being “FirstLine”. When I went to 
-the website (entered the URL), the main method of StringServer was called. The field was String[] args, which had a 
+The following screenshot shows the website with the given query string in the URL being “FirstLine”.
+![Image](wk4lrpt1(2).png)
+When I went to the website (entered the URL), the main method of StringServer was called. The field was String[] args, which had a 
 value which was the URL, which was [http://localhost:4000/add-message?s=FirstLine]http://localhost:4000/add-message?s=FirstLine.
 ```
 public static void main (String[] args) throws IOException {...}
@@ -33,8 +34,9 @@ if (url.getPath().equals("/")) {...}
 ```
 Since `url.getPath().contains(“/add-message”)` is true, the if statement body is executed. `url.getQuery().split(“=”)` is used to 
 assign the URL (split on the “=” character) to a String array called `parameters`. In the `parameters` array, the first element is the “s” 
-from the URL, and the second element is the given query string, “FirstLine” in this instance. Then, `String.format(parameters[1] + “\n”)` 
-is returned, which prints the given query string (“FirstLine”) and a new line on the webpage.
+from the URL, and the second element is the given query string, “FirstLine” in this instance. Then, the String variable `strTotal` is created, which is
+a concatenation of 'strTotal', given query string, and new line character. `strTotal` is returned, which prints the given query string (“FirstLine”) 
+and a new line on the webpage.
 ```
 else if (url.getPath().contains("/add-message")) {
     String[] parameters = url.getQuery().split("=");
@@ -42,8 +44,9 @@ else if (url.getPath().contains("/add-message")) {
     return String.format(strTotal);
 }
 
-The following screenshot shows the website with the given query string in the URL being “SecondLine” (I am aware this 
-output is incorrect, corrections to the code are made in Part 2). Most of the code execution is the same as the first input except 
+The following screenshot shows the website with the given query string in the URL being “SecondLine”. 
+![Image](wk4lrpt1(3).png)
+Most of the code execution is the same as the first input except 
 for the last few lines. When I went to the website (entered the URL), the main method of StringServer was called, and the same lines 
 executed. Then `handleRequest()` is called, with most of the lines executing with the same results. Then `url.getQuery().split(“=”)` 
 is used to assign the URL (split on the “=” character) to a String array called `parameters`. In the `parameters` array, the first 
