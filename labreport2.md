@@ -16,16 +16,23 @@ Since `args.length == 0` is false, the body of the if statement is skipped.
 ```
 if(args.length == 0){...}
 ```
-The field int port is found by using the `parseInt()` 
-method, and the value is 4000. A new instance of `Server` is instantiated and the `start()` method is called, with the value of 
-4000 for the `port` field, and a new `Handler()` instance being created for the `URLHandler` field. Then, the method `handleRequest()` 
-is called, with the URL being the value for the `url` field. Since `url.getPath().equals(“/”)` is not true, the body of the if 
-statement is skipped. Since `url.getPath().contains(“/add-message”)` is true, the if statement body is executed. 
-`url.getQuery().split(“=”)` is used to assign the URL (split on the “=” character) to a String array called `parameters`. In the
-`parameters` array, the first element is the “s” from the URL, and the second element is the given query string, “FirstLine” in this 
-instance. Then, `String.format(parameters[1] + “\n”)` is returned, which prints the given query string (“FirstLine”) and a new line 
-on the webpage.
-![Image](wk4lrpt11.png)
+The field `int port` is found by using the `parseInt()` method, and the value is 4000. A new instance of `Server` is instantiated and
+the `start()` method is called, with the value of 4000 for the `port` field, and a new `Handler()` instance being created for the `URLHandler` field.
+```
+int port = Integer.parseInt(args[0]);
+
+Server.start(port, new Handler());
+```
+Then, the method `handleRequest()` is called, with the URL being the value for the `url` field.
+```
+public String handleRequest(URI url) {...}
+```
+Since `url.getPath().equals(“/”)` is not true, the body of the if statement is skipped.
+Since `url.getPath().contains(“/add-message”)` is true, the if statement body is executed. `url.getQuery().split(“=”)` is used to 
+assign the URL (split on the “=” character) to a String array called `parameters`. In the `parameters` array, the first element is the “s” 
+from the URL, and the second element is the given query string, “FirstLine” in this instance. Then, `String.format(parameters[1] + “\n”)` 
+is returned, which prints the given query string (“FirstLine”) and a new line on the webpage.
+
 The following screenshot shows the website with the given query string in the URL being “SecondLine” (I am aware this 
 output is incorrect, corrections to the code are made in Part 2). Most of the code execution is the same as the first input except 
 for the last few lines. When I went to the website (entered the URL), the main method of StringServer was called, and the same lines 
@@ -51,11 +58,10 @@ was printed after the second URI input was given.
 * Failure-inducing test 2: For this test, I used two URI inputs, one with a valid query string, and a second without one 
 (meaning `getPath() = “/”`). The expected output (after the two inputs were given) was that the first input string should be printed. The first 
 output was correct, as it printed the first given query string. The symptom was that nothing was printed after the second URI input was given.
-![Image](wk4lrpt21.png)
-![Image](wk4lrpt22.png)
+
 * No-failure test: For this test, I used one URI input, one with a valid query string. The expected output was that the input string should be 
 printed. The actual output was the same as the expected.
-![Image](wk4lrpt23.png)
+
 
 * Code before fixes:
 ```
