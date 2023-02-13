@@ -34,8 +34,8 @@ if (url.getPath().equals("/")) {...}
 ```
 Since `url.getPath().contains(“/add-message”)` is true, the if statement body is executed. `url.getQuery().split(“=”)` is used to 
 assign the URL (split on the “=” character) to a String array called `parameters`. In the `parameters` array, the first element is the “s” 
-from the URL, and the second element is the given query string, “FirstLine” in this instance. Then, the String variable `strTotal` is created, which is
-a concatenation of 'strTotal', given query string, and new line character. `strTotal` is returned, which prints the given query string (“FirstLine”) 
+from the URL, and the second element is the given query string, “FirstLine” in this instance. Then, the local String variable `strTotal` is created, which is
+a concatenation of 'strTotal', the given query string, and a new line character. `strTotal` is returned, which prints the given query string (“FirstLine”) 
 and a new line on the webpage.
 ```
 else if (url.getPath().contains("/add-message")) {
@@ -43,18 +43,15 @@ else if (url.getPath().contains("/add-message")) {
     strTotal = strTotal + parameters[1] + "\n";
     return String.format(strTotal);
 }
-
+```
 The following screenshot shows the website with the given query string in the URL being “SecondLine”. 
 ![Image](wk4lrpt1(3).png)
-Most of the code execution is the same as the first input except 
-for the last few lines. When I went to the website (entered the URL), the main method of StringServer was called, and the same lines 
-executed. Then `handleRequest()` is called, with most of the lines executing with the same results. Then `url.getQuery().split(“=”)` 
-is used to assign the URL (split on the “=” character) to a String array called `parameters`. In the `parameters` array, the first 
-element is the “s” from the URL, and the second element is the given query string, “SecondLine” in this instance. Then, 
-`String.format(parameters[1] + “\n”)` is returned, which prints the given query string (“SecondLine”) and a new line on the webpage. 
-The output is incorrect. The expected output is “FirstLine” + “\n” + “SecondLine”, but instead, only “SecondLine” is printed when the 
-second input is given.
-![Image](wk4lrpt12.png)
+Most of the code execution is the same as the first input except for the last few lines. When I went to the website (entered the URL), 
+the main method of StringServer was called, and the same lines executed. Then `handleRequest()` is called, with most of the lines executing 
+with the same results. Then `url.getQuery().split(“=”)` is used to assign the URL (split on the “=” character) to a String array called `parameters`. 
+In the `parameters` array, the first element is the “s” from the URL, and the second element is the given query string, “SecondLine” in this instance. The 
+local String variable `strTotal` is modified to a String that is a concatenation of 'strTotal', the given query string, and new line character. `strTotal` 
+is returned, which prints the "FirstLine" on the first line and "SecondLine" on the second line.
 
 # Part 2
 For this part, unfortunately, I was having trouble with using the assertEquals() method on for the JUnit tests. When I was using the 
