@@ -54,7 +54,7 @@ local String variable `strTotal` is modified to a String that is a concatenation
 is returned, which prints the "FirstLine" on the first line and "SecondLine" on the second line.
 
 # Part 2
-For this part, I chose to investigate the bugs of the `averageWithoutLowest()` method in the ArrayExamples.java file.
+For this part, I chose to investigate the bug of the `averageWithoutLowest()` method in the ArrayExamples.java file.
 
 * Failure-inducing test 1: This test uses an array with three values: 1.0, 1.0, and 2.0. It checks if the `averageWithoutLowest()` method can correctly 
 calculate the average of the double values in an array when there are duplicates of the lowest value. In this case, the average without lowest value should 
@@ -75,36 +75,42 @@ calculate the average of unique double values of an array. In this case, the ave
     assertEquals(2.0 / 1, ArrayExamples.averageWithoutLowest(input5), 0.0);
   }
 ```
-* Output of running JUnit tests:
+* Output of running JUnit tests: As shown in the screenshot, the first test case (Failure-inducing test 1) led to an error. The test was meant to check if the `averageWithoutLowest()` method could account for duplicates of the lowest value. It failed in the way I expected, as it did not properly update the divisor 
+value in the calculation of the average value to account for multiple excluded lowest values.
 ![Image](wk4lrpt2(1).png)
 * Code before fixes:
 ```
-public String handleRequest(URI url) {
-    if (url.getPath().equals("/")) {
-        return "";
+  static double averageWithoutLowest(double[] arr) {
+    if(arr.length < 2) { return 0.0; }
+    double lowest = arr[0];
+    for(double num: arr) {
+      if(num < lowest) { lowest = num; }
     }
-    else if (url.getPath().contains("/add-message")) {
-        String[] parameters = url.getQuery().split("=");
-        return String.format(parameters[1] + "\n");
+    double sum = 0;
+    for(double num: arr) {
+      if(num != lowest) { sum += num; }
     }
+    return sum / (arr.length - 1);
+  }
 ```
-* Code after fixes:
+* Code after fixes: The change I made was creating a local int variable `averageDivisor`. For every loop in the for loop that adds a number to the sum to 
+calculate the average, 1 is added to `averageDivisor`. This way, the number of numbers in the sum is accurately tracked. `averageDivisor` is then used to 
+calculate the average value, which is returned.
 ```
-String strTotal = "";
-
-public String handleRequest(URI url) {
-    if (url.getPath().equals("/")) {
-        return "";
+static double averageWithoutLowest(double[] arr) {
+    if(arr.length < 2) { return 0.0; }
+    double lowest = arr[0];
+    for(double num: arr) {
+      if(num < lowest) { lowest = num; }
     }
-    else if (url.getPath().contains("/add-message")) {
-        String[] parameters = url.getQuery().split("=");
-        strTotal = strTotal + parameters[1] + "\n";
-        return String.format(strTotal);
+    double sum = 0;
+    int averageDivisor = 0;
+    for(double num: arr) {
+      if(num != lowest) { sum += num; averageDivisor += 1;}
     }
+    return sum / (averageDivisor);
+  }
 ```
-The main change I made was creating a new String variable called `strTotal` that additional query strings could be concatenated 
-to. Due to making this change, I also had to change the body of the else-if statement. I added a line to modify `strTotal` and 
-edited the line to return it.
 
 # Part 3
 One thing I learned from the past few weeks is how the student’s definition of a working program differs from the professional definition. 
