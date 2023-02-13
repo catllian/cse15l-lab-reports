@@ -2,7 +2,7 @@
 
 The command I chose was grep. The command searches within files to find matching patterns.
 
-# First option: -c
+## First option: -c
 For the first example, I searched the .txt files within the relative directory `written_2/non-fiction/OUP/Abernathy/` for a file that had the matching string "1940s". 
 "1940s" is only present in one file, ch1.txt.
 The command:
