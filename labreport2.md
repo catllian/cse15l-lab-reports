@@ -8,8 +8,8 @@ file from the Week 2 Lab for examples for URI methods and writing the StringServ
 
 The following screenshot shows the website with the given query string in the URL being “FirstLine”.
 ![Image](wk4lrpt1(2).png)
-When I went to the website (entered the URL), the main method of StringServer was called. The field was String[] args, which had a 
-value which was the URL, which was [http://localhost:4000/add-message?s=FirstLine]http://localhost:4000/add-message?s=FirstLine.
+When I went to the website (entered the URL), the main method of StringServer was called. The field was `String[] args`, which had a 
+value which was the URL, which was [http://localhost:4000/add-message?s=FirstLine](http://localhost:4000/add-message?s=FirstLine).
 ```
 public static void main (String[] args) throws IOException {...}
 ```
@@ -18,13 +18,14 @@ Since `args.length == 0` is false, the body of the if statement is skipped.
 if(args.length == 0){...}
 ```
 The field `int port` is found by using the `parseInt()` method, and the value is 4000. A new instance of `Server` is instantiated and
-the `start()` method is called, with the value of 4000 for the `port` field, and a new `Handler()` instance being created for the `URLHandler` field.
+the `start()` method is called, with the value of 4000 for the `int port` field, and a new `Handler()` instance being created for the 
+`URLHandler handler` field.
 ```
 int port = Integer.parseInt(args[0]);
 
 Server.start(port, new Handler());
 ```
-Then, the method `handleRequest()` is called, with the URL being the value for the `url` field.
+Then, the method `handleRequest()` is called, with the URL being the value for the `URI url` field.
 ```
 public String handleRequest(URI url) {...}
 ```
@@ -34,9 +35,9 @@ if (url.getPath().equals("/")) {...}
 ```
 Since `url.getPath().contains(“/add-message”)` is true, the if statement body is executed. `url.getQuery().split(“=”)` is used to 
 assign the URL (split on the “=” character) to a String array called `parameters`. In the `parameters` array, the first element is the “s” 
-from the URL, and the second element is the given query string, “FirstLine” in this instance. Then, the local String variable `strTotal` is created, which is
-a concatenation of 'strTotal', the given query string, and a new line character. `strTotal` is returned, which prints the given query string (“FirstLine”) 
-and a new line on the webpage.
+from the URL, and the second element is the given query string, “FirstLine”. Then, the local String variable `strTotal` is created, which is a 
+concatenation of 'strTotal' (starts as `null` in this instance), the given query string, and a new line character. `strTotal` is returned, 
+which prints the given query string (“FirstLine”) and a new line on the webpage.
 ```
 else if (url.getPath().contains("/add-message")) {
     String[] parameters = url.getQuery().split("=");
@@ -49,8 +50,8 @@ The following screenshot shows the website with the given query string in the UR
 Most of the code execution is the same as the first input except for the last few lines. When I went to the website (entered the URL), 
 the main method of StringServer was called, and the same lines executed. Then `handleRequest()` is called, with most of the lines executing 
 with the same results. Then `url.getQuery().split(“=”)` is used to assign the URL (split on the “=” character) to a String array called `parameters`. 
-In the `parameters` array, the first element is the “s” from the URL, and the second element is the given query string, “SecondLine” in this instance. The 
-local String variable `strTotal` is modified to a String that is a concatenation of 'strTotal', the given query string, and new line character. `strTotal` 
+In the `parameters` array, the first element is the “s” from the URL, and the second element is the given query string, “SecondLine”. The 
+local String variable `strTotal` is now assigned to a String that is a concatenation of 'strTotal', the given query string, and new line character. `strTotal` 
 is returned, which prints the "FirstLine" on the first line and "SecondLine" on the second line.
 
 # Part 2
