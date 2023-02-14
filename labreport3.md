@@ -141,3 +141,6 @@ travel_guides/berlitz2/Algarve-History.txt:
 ```
 I included only the first 10 lines of output because there were too many lines. The output displays the lines in the .txt files without the string "a", 
 including empty lines.
+
+## Reference
+IBM Documentation: [https://www.ibm.com/docs/en/zvm/7.1?topic=commands-grep-search-file-specified-pattern](https://www.ibm.com/docs/en/zvm/7.1?topic=commands-grep-search-file-specified-pattern)
