@@ -100,3 +100,44 @@ travel_guides/berlitz2/CanaryIslands-WhatToDo.txt:50:Submarine Trips: see Where 
 travel_guides/berlitz2/Paris-WhereToGo.txt:5:Where To Go
 ```
 The output displays the paths to the files with the matching lines, the numbers of the matching lines, and the lines themselves.
+
+## Fourth Option: -v
+The -v option instead looks for lines in files that don't match.
+
+For the first example, I searched one .txt file with the path `non-fiction/OUP/Abernathy/ch1.txt` for lines without the string "the".
+Command:
+```
+$ grep -v "the" non-fiction/OUP/Abernathy/ch1.txt
+```
+Output:
+```
+Five Decades of Change
+A Dying Industry—or Not?
+The Channel Perspective: Five Propositions
+Proposition 1:  The retail, apparel, and textile sectors are increasingly linked as a channel through information and distribution relationships.
+Similar dynamics are cropping up in nonclothing areas as well. Grocery stores now stock a profusion of toothbrushes, Home Depot has shelves and shelves of different light bulbs, and Dell offers custom-configured personal computers. The growing presence of fashion-basic elements in myriad consumer products means that all retailers and suppliers may find new competitive opportunities using replenishment.
+How This Book Is Organized
+```
+The output displays the lines in the .txt file without the string "the". This option might be useful if the user wants to find files that don't discuss a certain subject.
+
+For the second example, I searched the .txt files in the `travel_guides/berlitz2/` for files without lines that matched the string "a".
+Command:
+```
+$ grep -v "a" travel_guides/berlitz2/*.txt
+```
+Output:
+```
+travel_guides/berlitz2/Algarve-History.txt:
+travel_guides/berlitz2/Algarve-History.txt:
+travel_guides/berlitz2/Algarve-History.txt:
+travel_guides/berlitz2/Algarve-History.txt:
+travel_guides/berlitz2/Algarve-History.txt:A Brief History
+travel_guides/berlitz2/Algarve-History.txt:Under Moorish Rule
+travel_guides/berlitz2/Algarve-History.txt:Foreign Intrigues
+travel_guides/berlitz2/Algarve-History.txt:Kingdom’s End
+travel_guides/berlitz2/Algarve-History.txt:
+travel_guides/berlitz2/Algarve-History.txt:
+...
+```
+I included only the first 10 lines of output because there were too many lines. The output displays the lines in the .txt files without the string "a", 
+including empty lines.
