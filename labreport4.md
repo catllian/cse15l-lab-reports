@@ -8,14 +8,22 @@
 
 Type: `git clone <Ctrl + V> <enter>`
 
-* This clones the repository fork from the GitHub account into the remote computer
+(To clarify, the command that was entered was `git clone git@github.com:ucsd-cse15l-w23/lab7.git`).
+
+* This clones the repository fork from the GitHub account into the remote computer.
 ## Step 6: Run the tests, demonstrating that they fail
-* The compile command can be found on the Week 3 webpage of the CSE 15L website at the link [https://ucsd-cse15l-w23.github.io/week/week3/](https://ucsd-cse15l-w23.github.io/week/week3/) in your browser. Go to the "Lab Tasks" section, then the "Setup" section, and it will be under "MAC USERS:". Use <Ctrl + C> to copy the compile command
+* The compile command can be found on the Week 3 webpage of the CSE 15L website at the link [https://ucsd-cse15l-w23.github.io/week/week3/](https://ucsd-cse15l-w23.github.io/week/week3/) in your browser. Go to the "Lab Tasks" section, then the "Setup" section, and it will be under "MAC USERS:". Use <Ctrl + C> to copy the compile command.
+
 Type: `<Ctrl + V> <enter>`
+
 (To clarify, the command that was entered was `javac -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar *.java`).
+
 * This compiles the Java and JUnit library files.
-* Part of the run command can be found on the Week 3 webpage of the CSE 15L website at the link [https://ucsd-cse15l-w23.github.io/week/week3/](https://ucsd-cse15l-w23.github.io/week/week3/) in your browser. Go to the "Lab Tasks" section, then the "Setup" section, and it will be under "MAC USERS:". 
+* Part of the run command can be found on the Week 3 webpage of the CSE 15L website at the link [https://ucsd-cse15l-w23.github.io/week/week3/](https://ucsd-cse15l-w23.github.io/week/week3/) in your browser. Go to the "Lab Tasks" section, then the "Setup" section, and it will be under "MAC USERS:". Use <Ctrl + C> to copy the run command.
+
 Type: `<Ctrl + V> <Ctrl + W> ListExamplesTests>
 
+(To clarify, the command that was entered was `java -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar org.junit.runner.JUnitCore ListExamplesTests`).
 
-* 
+* This runs the ListExamplesTests.java file. The output is 1 failure because the ListExamples.java file has bugs.
+## Step 7: 
