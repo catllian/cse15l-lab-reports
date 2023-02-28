@@ -59,7 +59,8 @@ Type: `<up><up><up><enter>`
 ## Step 9: Commit and push the resulting change to your Github account (you can pick any commit message!)
 ![Image](wk8lrs9(1).png)
 Type: `git add ListExamples.java <enter>`, then `git commit -m "ListExamples.java updated" <enter>`
-* The first command tracks the changes to the ListExamples.java, and the next one makes a commit with given message.
+* The first command tracks the changes to the ListExamples.java, and the next command makes a commit with given message.
+
 ![Image](wk8lrs9(2).png)
 Type: `git push origin main <enter>`
 * The command pushes the commit to the main branch of the given origin, which is the lab7 repository on my GitHub account.
