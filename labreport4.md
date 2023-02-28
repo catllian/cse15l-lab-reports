@@ -1,6 +1,7 @@
 # Lab Report 4
 ## Challenge Task Procedure
 ## Step 4: Log into ieng6
+![Image](wk8lrs4.png)
 Type: `ssh cs15lwi23avv@ieng6.ucsd.edu <enter>`
 * This logs into the ieng6 account on a remote computer.
 ## Step 5: Clone your fork of the repository from your Github account
