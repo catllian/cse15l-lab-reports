@@ -5,6 +5,7 @@
 Type: `ssh cs15lwi23avv@ieng6.ucsd.edu <enter>`
 * This logs into the ieng6 account on a remote computer.
 ## Step 5: Clone your fork of the repository from your Github account
+![Image](wk8lrs5.png)
 * The SSH key can also be found at the GitHub repository link [https://github.com/catllian/lab7](https://github.com/catllian/lab7) in your browser. Go to the "Code" dropdown, then the "Local" section, then the "SSH" section. Click on the button to copy the SSH key.
 
 Type: `git clone <Ctrl + V> <enter>`
