@@ -30,17 +30,19 @@ Type: `<Ctrl + V><Ctrl + W> ListExamplesTests <enter>`
 
 * The <Ctrl + V> pastes the run command. <Ctrl + W> deletes the last word, because the original command was meant to apply to `ArrayTests`. Then `ListExamplesTests` is specified as the file to run. This runs ListExamplesTests. The output is 1 failure because the ListExamples.java file has bugs.
 ## Step 7: Edit the code file to fix the failing test
+![Image](wk8lrs7(1).png)
+![Image](wk8lrs7(2).png)
 Type: `nano L<tab>.java <enter>`
 
 (To clarify, the command that was entered was `nano ListExamples.java`).
 
-* The <tab> helps by autocompleting the "L" to "ListExamples". The command opens the nano to edit ListExamples.java.
-
+* The <tab> helps by autocompleting the "L" to "ListExamples". The command opens nano to edit ListExamples.java.
+![Image](wk8lrs7(3).png)
 Type: `<Ctrl + W> while(index2 <enter>`
-* The <Ctrl + W> opens the search bar to find the phrase `while(index2` in the code, and helps by moving the cursor closer to the location of the bug that will be edited.
-
+* The <Ctrl + W> opens the search bar to find the phrase `while(index2` in the code, and helps by moving the cursor closer to the location of the bug.
+![Image](wk8lrs7(4).png)
 Type: `<down><down><right><right><right><right><right><right><right><right><backspace> 2`, then `<Ctrl + O><enter><Ctrl + W>`
-* The first command goes to the exact location of the bug, deletes it, and replaces it with the correct character. The next command writes out the edit, confirms it will be written out to ListExamples.java, and then exits the nano editor.
+* The first command goes to the exact location of the bug, deletes it, and replaces it with the correct character `2`. The next command writes out the edit, confirms it will be written out to ListExamples.java, and then exits the nano editor.
 ## Step 8: Run the tests, demonstrating that they now succeed
 Type: `<up><up><up><enter>`
 
