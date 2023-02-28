@@ -8,26 +8,27 @@ Type: `ssh cs15lwi23avv@ieng6.ucsd.edu <enter>`
 ![Image](wk8lrs5.png)
 * The SSH key can also be found at the GitHub repository link [https://github.com/catllian/lab7](https://github.com/catllian/lab7) in your browser. Go to the "Code" dropdown, then the "Local" section, then the "SSH" section. Click on the button to copy the SSH key.
 
-Type: `git clone <Ctrl + V> <enter>`
+Type: `git clone <Ctrl + V><enter>`
 
 (To clarify, the command that was entered was `git clone git@github.com:catllian/lab7.git`).
 
 * This clones the repository fork from the GitHub account into the remote computer.
 ## Step 6: Run the tests, demonstrating that they fail
+![Image](wk8lrs6.png)
 * The compile command can be found on the Week 3 webpage of the CSE 15L website at the link [https://ucsd-cse15l-w23.github.io/week/week3/](https://ucsd-cse15l-w23.github.io/week/week3/) in your browser. Go to the "Lab Tasks" section, then the "Setup" section, and it will be under "MAC USERS:". Use <Ctrl + C> to copy the compile command.
 
 Type: `<Ctrl + V><enter>`
 
 (To clarify, the command that was entered was `javac -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar *.java`).
 
-* This compiles the Java and JUnit library files.
+* The <Ctrl + V> pastes the compile command, and it is executed. This compiles the Java and JUnit library files.
 * Part of the run command can be found on the Week 3 webpage of the CSE 15L website at the link [https://ucsd-cse15l-w23.github.io/week/week3/](https://ucsd-cse15l-w23.github.io/week/week3/) in your browser. Go to the "Lab Tasks" section, then the "Setup" section, and it will be under "MAC USERS:". Use <Ctrl + C> to copy the run command.
 
 Type: `<Ctrl + V><Ctrl + W> ListExamplesTests <enter>`
 
 (To clarify, the command that was entered was `java -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar org.junit.runner.JUnitCore ListExamplesTests`).
 
-* This runs the ListExamplesTests.java file. The output is 1 failure because the ListExamples.java file has bugs.
+* The <Ctrl + V> pastes the run command. <Ctrl + W> deletes the last word, because the original command was meant to apply to `ArrayTests`. Then `ListExamplesTests` is specified as the file to run. This runs ListExamplesTests. The output is 1 failure because the ListExamples.java file has bugs.
 ## Step 7: Edit the code file to fix the failing test
 Type: `nano L<tab>.java <enter>`
 
