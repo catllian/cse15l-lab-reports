@@ -143,7 +143,7 @@ Output:
 ./travel_guides/berlitz1
 ./travel_guides/berlitz2
 ```
-The output displays the paths of all the directories within the current directory.
+The output displays the paths of all the directories within the current directory, including the current directory.
 
 ## Reference
 IBM Documentation: [https://www.ibm.com/docs/en/aix/7.2?topic=f-find-command](https://www.ibm.com/docs/en/aix/7.2?topic=f-find-command)
