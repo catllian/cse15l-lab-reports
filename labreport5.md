@@ -1,40 +1,34 @@
-# Lab Report 3
+# Lab Report 4
 
-The command I chose was grep. The command searches within files to find matching patterns. The "normal" format of the command is:
+The command I chose to explore options for is find. The command searches through the paths of a directory and lists the files and directories within it. The "normal" format of the command is:
 ```
-grep <pattern> <path>
+find <path>
 ```
-The output will print all the lines in the files (within the path) that match the given pattern.
+The output will list the files and directories within the directory of the given path.
 
-## First Option: -c
-The option -c is meant to only display the number of matching lines for each file.
+## First Option: - ls
+The option -ls prints the corresponding statistics of the files and directories found.
 
-For the first example, I searched the .txt files within the directory `non-fiction/OUP/Abernathy/` for a file that had the matching string "1940s". 
-"1940s" is only present in one file, ch1.txt.
+For the first example, I find used the command `cd written_2` to get from the docsearch directory to the written_2 directory. I used the find command with the -ls option for the directory ./non-fiction/OUP/Berk.
+
 Command:
 ```
-$ grep -c "1940s" non-fiction/OUP/Abernathy/*.txt
+$ find ./non-fiction/OUP/Berk -ls
 ```
 Output:
 ```
-non-fiction/OUP/Abernathy/ch1.txt:1
-non-fiction/OUP/Abernathy/ch14.txt:0
-non-fiction/OUP/Abernathy/ch15.txt:0
-non-fiction/OUP/Abernathy/ch2.txt:0
-non-fiction/OUP/Abernathy/ch3.txt:0
-non-fiction/OUP/Abernathy/ch6.txt:0
-non-fiction/OUP/Abernathy/ch7.txt:0
-non-fiction/OUP/Abernathy/ch8.txt:0
-non-fiction/OUP/Abernathy/ch9.txt:0
+28147497671137754      0 drwxr-xr-x   1 cathe    197609          0 Feb  2 16:22 ./non-fiction/OUP/Berk
+33214047251929585     92 -rw-r--r--   1 cathe    197609      92576 Feb  2 16:22 ./non-fiction/OUP/Berk/ch1.txt
+30117822508112372    104 -rw-r--r--   1 cathe    197609     103190 Feb  2 16:22 ./non-fiction/OUP/Berk/ch2.txt
+37999121856010715    104 -rw-r--r--   1 cathe    197609     103804 Feb  2 16:22 ./non-fiction/OUP/Berk/CH4.txt
+32932572275218938     68 -rw-r--r--   1 cathe    197609      67091 Feb  2 16:22 ./non-fiction/OUP/Berk/ch7.txt
 ```
-The output displays the paths to all the .txt files and the number of matching lines in each file. Here, it shows that ch1.txt has 1 line that matches 
-and that the rest have 0 lines that match. This option would be useful if the user only needs to see the number of lines with matches for each file. This can be 
-used to make succinct comparisons between multiple files.
+The output shows all of the files within the Berk folder with statistical information. This option is useful if the user wants to see information about particular files or directories and/or wants to compare information.
 
 For the second example, I searched one .txt file with the path `travel_guides/berlitz1/HandRHawaii.txt` for the number of lines that matched "the".
 Command:
 ```
-$ grep -c "the" travel_guides/berlitz1/HandRHawaii.txt
+$ find ./travel_guides -ls
 ```
 Output:
 ```
@@ -43,7 +37,7 @@ Output:
 The output displays the number of lines with the matching string. HandRHawaii.txt has 64 lines that contain "the". For this example, I was just curious as to how the 
 output would be displayed if the given path was just one .txt file.
 
-## Second Option: -l
+## Second Option: -name
 The option -l is meant to only display the files that have matching lines. 
 
 For the first example, I searched the .txt files within the directory `non-fiction/OUP/Abernathy/` for a file that had the matching string "1940s". 
@@ -76,7 +70,7 @@ travel_guides/berlitz1/HandRLosAngeles.txt
 ```
 The output displays the paths to the .txt files with the matching lines.
 
-## Third Option: -n
+## Third Option: -regex
 The option -n displays the line number with the matching lines.
 
 For the first example, I searched one .txt file with the path `non-fiction/OUP/Abernathy/ch1.txt` for the line with the string "1940s". 
@@ -105,7 +99,7 @@ travel_guides/berlitz2/Paris-WhereToGo.txt:5:Where To Go
 ```
 The output displays the paths to the files with the matching lines, the matching line numbers, and the lines themselves.
 
-## Fourth Option: -v
+## Fourth Option: -type
 The -v option looks for lines in files that don't match.
 
 For the first example, I searched one .txt file with the path `non-fiction/OUP/Abernathy/ch1.txt` for lines without the string "the".
@@ -147,4 +141,4 @@ I included only the first 10 lines of output because there were too many lines. 
 including empty lines.
 
 ## Reference
-IBM Documentation: [https://www.ibm.com/docs/en/zvm/7.1?topic=commands-grep-search-file-specified-pattern](https://www.ibm.com/docs/en/zvm/7.1?topic=commands-grep-search-file-specified-pattern)
+IBM Documentation: [https://www.ibm.com/docs/en/aix/7.2?topic=f-find-command](https://www.ibm.com/docs/en/aix/7.2?topic=f-find-command)
