@@ -1,16 +1,15 @@
-# Lab Report 4
+# Lab Report 5
 
-The command I chose to explore options for is find. The command searches through the paths of a directory and lists the files and directories within it. The "normal" format of the command is:
+The lab report prompt I chose was to make another version of Lab Report 3: Researching Commands. The command I chose to explore options for is find. The command searches through the paths of a directory and lists the files and directories within it. The "default" format of the command is:
 ```
 find <path>
 ```
-The output will list the files and directories within the directory of the given path.
+Where the `path` argument specifies the directory to search for files and directories in.
 
 ## First Option: - ls
 The option -ls prints the corresponding statistics of the files and directories found.
 
-For the first example, I find used the command `cd written_2` to get from the docsearch directory to the written_2 directory. I used the find command with the -ls option for the directory ./non-fiction/OUP/Berk.
-
+For the first example, I used the find command with the -ls option for the directory ./non-fiction/OUP/Berk.
 Command:
 ```
 $ find ./non-fiction/OUP/Berk -ls
@@ -44,12 +43,12 @@ Output:
  7036874417839042      2 -rw-r--r--   1 cathe    197609       1562 Feb  2 16:22 ./travel_guides/berlitz1/HandRLakeDistrict.txt
  ...
 ```
-Only the first 10 lines of output are shown because the actual output was to long to include. The output shows the directories and files within the ./travel-guides directories with the corresponding statistical information.
+Only the first 10 lines of output are shown because the actual output was too long to include. The output shows the directories and files within the ./travel-guides directory with the corresponding statistical information.
 
 ## Second Option: -name
 The option -name searches for and lists the files or directories with names that match the given name argument.
 
-For the first example, I searched the directory ./non-fiction/OUP for two existing files with the name ch10.txt.
+For the first example, I searched the directory ./non-fiction/OUP for two files with the same name ch10.txt.
 Command:
 ```
 $ find ./non-fiction/OUP -name ch10.txt
@@ -61,7 +60,7 @@ Output:
 ```
 The output displays the paths for the matching files. This command is useful if the user wants to find a file or directory with a specific name.
 
-For the second example, I searched the directory ./travel_guides for an existing directory with the name berlitz1.
+For the second example, I searched the directory ./travel_guides for the directory with the name berlitz1.
 Command:
 ```
 $ find ./travel_guides -name berlitz1
@@ -98,7 +97,7 @@ Output:
 The output displays the matching directory path.
 
 ## Fourth Option: -type
-The -type option searches for directories or files that match given type argument.
+The -type option searches for directories or files that match the given type argument.
 
 For the first example, I searched the directory ./non-fiction/OUP/Castro for files of type `f` (`f` argument means plain file type). The Castro folder has 14 .txt files, and .txt files are plain files.
 Command:
@@ -122,7 +121,7 @@ Output:
 ./non-fiction/OUP/Castro/chY.txt
 ./non-fiction/OUP/Castro/chZ.txt
 ```
-The output displays the paths for all 14 files within the directory, since they match the plain file type. This option would be useful if the user wants to find directories or files within a directory of a specific type.
+The output displays the paths for all 14 files within the directory, since they match the plain file type. This option would be useful if the user wants to find directories or files of a specific type.
 
 For the second example, I searched the current directory, the written_2 folder, for all directories within it (`d` argument means directory). 
 Command:
