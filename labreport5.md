@@ -142,7 +142,6 @@ Output:
 ./travel_guides
 ./travel_guides/berlitz1
 ./travel_guides/berlitz2
-...
 ```
 The output displays the paths of all the directories within the current directory.
 
