@@ -47,18 +47,19 @@ Output:
 Only the first 10 lines of output are shown because the actual output was to long to include. The output shows the directories and files within the ./travel-guides directories with the corresponding statistical information.
 
 ## Second Option: -name
-The option -name is meant to search for and list only the files or directories with names that match the given name argument
+The option -name searches for and lists the files or directories with names that match the given name argument.
 
-For the first example, I searched the directory ./non-fiction/OUP/Kauffman for an existing file with the name ch10.txt.
+For the first example, I searched the directory ./non-fiction/OUP for two existing files with the name ch10.txt.
 Command:
 ```
-$ find ./non-fiction/OUP/Kauffman -name ch10.txt
+$ find ./non-fiction/OUP -name ch10.txt
 ```
 Output:
 ```
+./non-fiction/OUP/Fletcher/ch10.txt
 ./non-fiction/OUP/Kauffman/ch10.txt
 ```
-The output displays the path for the matching file. This command is useful if the user wants to find a file or directory with a specific name.
+The output displays the paths for the matching files. This command is useful if the user wants to find a file or directory with a specific name.
 
 For the second example, I searched the directory ./travel_guides for an existing directory with the name berlitz1.
 Command:
@@ -72,74 +73,79 @@ Output:
 The output displays the path of the matching directory.
 
 ## Third Option: -regex
-The option -n displays the line number with the matching lines.
+The option -regex searches for and lists the files or directories with the given pathname.
 
-For the first example, I searched one .txt file with the path `non-fiction/OUP/Abernathy/ch1.txt` for the line with the string "1940s". 
+For the first example, I searched the current directory, the written_2 folder, for a file with the path ./non-fiction/OUP/Abernathy/ch1.txt.
 Command:
 ```
-$ grep -n "1940s" non-fiction/OUP/Abernathy/ch1.txt
+$ find ./ -regex ./non-fiction/OUP/Abernathy/ch1.txt
 ```
 Output:
 ```
-5:In the late 1940s, Bond Stores, the largest men’s clothing chain at the time, created a sensation in New York City by offering a wide selection of suits with two pairs of pants instead of one, reintroducing a level of product choice not seen since before the war.1 When the line of hopeful buyers at its Times Square store stretched around the block, Bond had to impose a limit of two suits per customer. During World War II, the apparel and textile industries had been converted to supply field jackets, overcoats, and uniforms to the U.S. and Allied Forces. But in the years immediately following the war, returning soldiers, the end of rationing, and pent-up customer demand meant apparel was in short supply.
+./non-fiction/OUP/Abernathy/ch1.txt
 ```
-The output displays the matching line number followed by the line itself. This option would be useful if the user wanted to find where exactly in the file the matches are.
+The output displays the matching file path. This option is useful if the user wants to see if a certain path exists.
 
-For the second example, I searched the .txt files within the directory `travel_guides/berlitz2/` for files with lines that matched "Where To Go". There are multiple 
-files in this directory with matching lines.
+For the second example, I searched the current directory, the written_2 folder, for a directory with the path ./travel_guides/berlitz2.
 Command:
 ```
-$ grep -n "Where To Go" travel_guides/berlitz2/*.txt
+$ find ./ -regex ./travel_guides/berlitz2
 ```
 Output:
 ```
-travel_guides/berlitz2/Beijing-WhereToGo.txt:5:Where To Go
-travel_guides/berlitz2/CanaryIslands-WhatToDo.txt:48:Watch the birdie (and the dolphins). There are several animal/bird parks in the islands, Tenerife’s Loro Park, Gran Canaria’s Palmitos Park, or Lanzarote’s Guinate Tropical Park are all described in the Where To Go section of this guide. Others include the Parque Las Aguilas, Los Cristianos, Arona (Tenerife), which as the name implies, has an eagle show, all kinds of other birds and animals, and the new JungleRaid where kids of all ages can work their way through all kinds of obstacles.
-travel_guides/berlitz2/CanaryIslands-WhatToDo.txt:50:Submarine Trips: see Where To Go for info on these excursions. Puerto Colón, Playa de Américas (Tenerife); Peurto de Mogán (Gran Canaria); and Puerto Calero (Lanzarote).
-travel_guides/berlitz2/Paris-WhereToGo.txt:5:Where To Go
+./travel_guides/berlitz2
 ```
-The output displays the paths to the files with the matching lines, the matching line numbers, and the lines themselves.
+The output displays the matching directory path.
 
 ## Fourth Option: -type
-The -v option looks for lines in files that don't match.
+The -type option searches for directories or files that match given type argument.
 
-For the first example, I searched one .txt file with the path `non-fiction/OUP/Abernathy/ch1.txt` for lines without the string "the".
+For the first example, I searched the directory ./non-fiction/OUP/Castro for files of type `f` (`f` argument means plain file type). The Castro folder has 14 .txt files, and .txt files are plain files.
 Command:
 ```
-$ grep -v "the" non-fiction/OUP/Abernathy/ch1.txt
+$ find ./non-fiction/OUP/Castro -type f
 ```
 Output:
 ```
-Five Decades of Change
-A Dying Industry—or Not?
-The Channel Perspective: Five Propositions
-Proposition 1:  The retail, apparel, and textile sectors are increasingly linked as a channel through information and distribution relationships.
-Similar dynamics are cropping up in nonclothing areas as well. Grocery stores now stock a profusion of toothbrushes, Home Depot has shelves and shelves of different light bulbs, and Dell offers custom-configured personal computers. The growing presence of fashion-basic elements in myriad consumer products means that all retailers and suppliers may find new competitive opportunities using replenishment.
-How This Book Is Organized
+./non-fiction/OUP/Castro/chA.txt
+./non-fiction/OUP/Castro/chB.txt
+./non-fiction/OUP/Castro/chC.txt
+./non-fiction/OUP/Castro/chL.txt
+./non-fiction/OUP/Castro/chM.txt
+./non-fiction/OUP/Castro/chN.txt
+./non-fiction/OUP/Castro/chO.txt
+./non-fiction/OUP/Castro/chP.txt
+./non-fiction/OUP/Castro/chQ.txt
+./non-fiction/OUP/Castro/chR.txt
+./non-fiction/OUP/Castro/chV.txt
+./non-fiction/OUP/Castro/chW.txt
+./non-fiction/OUP/Castro/chY.txt
+./non-fiction/OUP/Castro/chZ.txt
 ```
-The output displays the lines in the .txt file without the string "the". This option might be useful if the user wants to find files that don't discuss a certain subject.
+The output displays the paths for all 14 files within the directory, since they match the plain file type. This option would be useful if the user wants to find directories or files within a directory of a specific type.
 
-For the second example, I searched the .txt files in the `travel_guides/berlitz2/` for files without lines that matched the string "a".
+For the second example, I searched the current directory, the written_2 folder, for all directories within it (`d` argument means directory). 
 Command:
 ```
-$ grep -v "a" travel_guides/berlitz2/*.txt
+$ find ./ -type d
 ```
 Output:
 ```
-travel_guides/berlitz2/Algarve-History.txt:
-travel_guides/berlitz2/Algarve-History.txt:
-travel_guides/berlitz2/Algarve-History.txt:
-travel_guides/berlitz2/Algarve-History.txt:
-travel_guides/berlitz2/Algarve-History.txt:A Brief History
-travel_guides/berlitz2/Algarve-History.txt:Under Moorish Rule
-travel_guides/berlitz2/Algarve-History.txt:Foreign Intrigues
-travel_guides/berlitz2/Algarve-History.txt:Kingdom’s End
-travel_guides/berlitz2/Algarve-History.txt:
-travel_guides/berlitz2/Algarve-History.txt:
+./
+./non-fiction
+./non-fiction/OUP
+./non-fiction/OUP/Abernathy
+./non-fiction/OUP/Berk
+./non-fiction/OUP/Castro
+./non-fiction/OUP/Fletcher
+./non-fiction/OUP/Kauffman
+./non-fiction/OUP/Rybczynski
+./travel_guides
+./travel_guides/berlitz1
+./travel_guides/berlitz2
 ...
 ```
-I included only the first 10 lines of output because there were too many lines. The output displays the lines in the .txt files without the string "a", 
-including empty lines.
+The output displays the paths of all the directories within the current directory.
 
 ## Reference
 IBM Documentation: [https://www.ibm.com/docs/en/aix/7.2?topic=f-find-command](https://www.ibm.com/docs/en/aix/7.2?topic=f-find-command)
